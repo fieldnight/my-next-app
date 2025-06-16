@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #383838;
   }
 }
 
@@ -23,4 +23,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+  @apply p-4 w-[70%] h-screen border rounded-lg shadow-md bg-white;
+}
+
+.bg-gradient-green {
+  background: linear-gradient(to left, #95bf954d, #70db724d);
 }
