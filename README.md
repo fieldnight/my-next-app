@@ -2,6 +2,7 @@
 
 vscode의 터미널에서 
 1. git clone https://github.com/fieldnight/my-next-app.git
-2. npm install
-3. npm run dev
-4. 이후 나오는 화면에서 localhost:3000을 통해 접속하시면 됩니다. 링크 위에 shift+우클릭 
+2. ｃｄ ｍｙ－ｎｅｘｔ－ａｐｐ
+3. npm install
+4. npm run dev
+5. 이후 나오는 화면에서 localhost:3000을 통해 접속하시면 됩니다. 링크 위에 shift+우클릭 
