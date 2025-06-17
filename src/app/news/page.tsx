@@ -1,5 +1,3 @@
-// app/news/page.tsx
-
 import * as xml2js from "xml2js";
 import * as cheerio from "cheerio";
 import { notFound } from "next/navigation";
@@ -109,14 +107,14 @@ export default async function NewsPage({
   const currentItems = newsItems.slice(start, end);
 
   return (
-    <div className="flex items-center justify-center h-screen my-10">
-      <main className="pt-10 w-[70%] h-screen border rounded-2xl shadow-md bg-gradient-green  ">
+    <div className="flex items-center justify-center  my-10 max-h-screen">
+      <main className="pt-10 w-[70%]  border rounded-2xl shadow-md bg-gradient-green  ">
         <div className="flex flex-row justify-between items-center p-4">
           <div>새빛산으로</div>
           <NavigateBar />
         </div>
 
-        <main className="p-4 h-screen border rounded-2xl shadow-md bg-white p-10">
+        <main className="p-4  border rounded-2xl shadow-md bg-white p-10">
           <header className="mb-6">
             <h1 className="text-3xl font-bold mb-2">🔥 산불 관련 뉴스</h1>
             <p className="text-gray-600">최신 산불 뉴스를 확인하세요</p>

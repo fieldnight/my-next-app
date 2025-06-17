@@ -1,0 +1,6 @@
+vscode 설치 후
+해당 파일을 폴더에서 열기 합니다
+이 후 터미널에서 npm install을 한 후, 
+npm run dev 해서 localhost 3000번으로 접속합니다. 
+
+signUp, signIn, /, news, 커뮤니티 페이지가 있습니다. 

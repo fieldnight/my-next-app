@@ -22,14 +22,15 @@ export default function CommunityList() {
     localStorage.setItem("posts", JSON.stringify(posts));
   }, [posts]);
 
-  const handleNewPost = (post: Omit<Post, "id" | "comments">) => {
+  const handleNewPost = (post: Omit<Post, "id" | "comments" | "createdAt">) => {
     const newPost: Post = {
       ...post,
       id: Date.now(),
+      createdAt: new Date().toISOString(),
       comments: [],
     };
     setPosts([newPost, ...posts]);
-    setShowForm(false); // 모달 닫기
+    setShowForm(false);
   };
 
   const handleAddComment = (postId: number, comment: Comment) => {
@@ -60,18 +61,23 @@ export default function CommunityList() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto mt-6 relative">
+    <div className="max-w-2xl mx-auto mt-6 relative min-h-150">
       <div className="flex justify-between items-center mb-4">
         <button
           onClick={() => setShowForm(true)}
           className="px-3 py-1 bg-white text-[#118079] border border-[#118079] rounded 
              hover:bg-[#dff4f2] hover:text-[#0b5f59] hover:border-[#0b5f59] transition-colors duration-200 "
         >
-         새 글 작성하기
+          새 글 작성하기
         </button>
       </div>
 
       <ul className="space-y-4">
+        {currentPosts.length === 0 && (
+          <div className="text-center text-gray-500">
+            게시글이 없습니다. 새 글을 작성해보세요!
+          </div>
+        )}
         {currentPosts.map((post) => (
           <li
             key={post.id}

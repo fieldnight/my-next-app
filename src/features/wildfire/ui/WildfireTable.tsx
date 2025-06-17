@@ -60,8 +60,9 @@ export default function WildfireTable() {
   };
 
   return (
-    <div>
-      <h2>산불 발생 통계 조회</h2>
+    <div style={{ width: "100%", padding: "1rem" }}>
+      <h2 className="text-2xl font-semibold">산불 발생 통계 조회</h2>
+      <div>정확한 날짜를 지정해서, 산불 발생 위치,시간,원인을 확인하세요!</div>
       <div style={{ marginBottom: 16 }}>
         <label>
           시작년도:
@@ -115,7 +116,10 @@ export default function WildfireTable() {
             ))}
           </select>
         </label>
-        <button style={{ marginLeft: 16 }} onClick={fetchData}>
+        <button
+          className="px-5 py-2 border rounded cursor-pointer"
+          onClick={fetchData}
+        >
           조회
         </button>
       </div>
@@ -131,7 +135,12 @@ export default function WildfireTable() {
           <table
             border={1}
             cellPadding={6}
-            style={{ borderCollapse: "collapse", width: "100%" }}
+            style={{
+              borderCollapse: "collapse",
+              width: "100%",
+              maxWidth: "100%",
+              wordBreak: "break-word", // ✅ 내용이 길어도 박스 안에 머물게 함
+            }}
           >
             <thead>
               <tr>

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function NavigateBar() {
@@ -9,7 +8,7 @@ export default function NavigateBar() {
     { label: "메인", href: "/" },
     { label: "산불 뉴스", href: "/news" },
     { label: "자원봉사 플로깅", href: "/community" },
-    { label: "로그인", href: "/login" },
+    { label: "로그인", href: "/signUp" },
   ];
 
   return (
@@ -17,15 +16,15 @@ export default function NavigateBar() {
       {menuItems.map((item) => {
         const isActive = pathname === item.href;
         return (
-          <Link
+          <button
             key={item.href}
-            href={item.href}
-            className={`px-4 py-2 rounded transition 
-                  ${isActive ? "text-black font-semibold" : "text-green-900"}
-                  hover:text-green-500 `}
+            onClick={() => (window.location.href = item.href)} // ✅ 페이지 강제 새로고침 이동
+            className={`px-4 py-2 rounded transition cursor-pointer
+              ${isActive ? "text-black font-semibold" : "text-green-900"}
+              hover:text-green-500`}
           >
             {item.label}
-          </Link>
+          </button>
         );
       })}
     </div>
